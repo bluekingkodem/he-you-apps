@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HousingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,10 @@ Route::get('/user/show/{user}', [UserController::class, 'show'])->name('user.sho
 Route::get('/user/list', [UserController::class, 'list'])->name('user.list')->middleware('auth');
 
 Route::get('/user/delete/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('auth');
+
+//Country
+Route::get('/country/create', [CountryController::class, 'create'])->name('country.create');
+Route::post('/country/create', [CountryController::class, 'store'])->name('update');
 
 // Housings
 Route::get('/housing/index', [HousingController::class, 'index'])->name('housing.list')->middleware('auth');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\HousingRequest;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\Housing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,6 +32,7 @@ class HousingController extends Controller
     public function create()
     {
         $category = Category::all();
+        // $country = Country::all();
         return view('housing.create', ['category' => $category]);
     }
 
