@@ -9,13 +9,13 @@
                     Liste des categories
                 </div>
                 <a class="btn btn-primary w-25 mt-5 float" href="{{ route('category.create') }}">Ajouter une
-                    categorie <i class="fa-solid fa-user-plus"></i></a>
+                    categorie <i class="fa-solid fa-list"></i></a>
                 <div class="card-body">
                     {{ $category->links() }}
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Type</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

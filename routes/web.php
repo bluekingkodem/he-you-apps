@@ -44,6 +44,22 @@ Route::get('/country/index', [CountryController::class, 'index'])->name('country
 Route::get('/country/create', [CountryController::class, 'create'])->name('country.create');
 Route::post('/country/create', [CountryController::class, 'store'])->name('update');
 
+Route::get('/country/edit/{country}', [CountryController::class, 'edit'])->name('country.edit');
+Route::post('/country/edit/{country}', [CountryController::class, 'update'])->name('update');
+
+Route::get('/country/destroy/{country}', [CountryController::class, 'destroy'])->name('country.destroy');
+
+//city
+Route::get('/city/index', [CountryController::class, 'index'])->name('city.list');
+
+Route::get('/city/create', [CountryController::class, 'create'])->name('city.create');
+Route::post('/city/create', [CountryController::class, 'store'])->name('update');
+
+Route::get('/city/edit/{city}', [CountryController::class, 'edit'])->name('city.edit');
+Route::post('/city/edit/{city}', [CountryController::class, 'update'])->name('update');
+
+Route::get('/city/destroy/{city}', [CountryController::class, 'destroy'])->name('city.destroy');
+
 // Housings
 Route::get('/housing/index', [HousingController::class, 'index'])->name('housing.list')->middleware('auth');
 

@@ -85,6 +85,8 @@ class HousingController extends Controller
     {
         $housing->delete();
 
+        return redirect()->route('housing.list')->with('success', 'Le logement a bien ete supprime');
+
     }
 
     public function viewSearch()
