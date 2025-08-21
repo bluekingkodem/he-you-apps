@@ -1,20 +1,15 @@
 @extends('layout.admin')
 
 @section('content')
-    <main>
+    <div id="layoutSidenav_content">
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Tables</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <li class="breadcrumb-item active">Tables</li>
-            </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
                     Liste des categories
                 </div>
-                <a class="btn btn-primary w-25 mt-5 float" href="{{ route('category.create') }}">Ajouter une categorie <i
-                        class="fa-solid fa-user-plus"></i></a>
+                <a class="btn btn-primary w-25 mt-5 float" href="{{ route('category.create') }}">Ajouter une
+                    categorie <i class="fa-solid fa-user-plus"></i></a>
                 <div class="card-body">
                     {{ $category->links() }}
                     <table id="datatablesSimple">
@@ -30,7 +25,8 @@
                                     <td>{{ $cat->name }}</td>
 
                                     <td>
-                                        <a class="btn btn-warning" href="{{ route('category.edit', ['category' => $cat->id]) }}"><i
+                                        <a class="btn btn-warning"
+                                            href="{{ route('category.edit', ['category' => $cat->id]) }}"><i
                                                 class="fa-solid fa-pen"></i></a>
                                         <button class="btn btn-danger" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>
@@ -43,7 +39,8 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer une categorie
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer une
+                                                    categorie
                                                 </h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
@@ -69,5 +66,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 @endsection

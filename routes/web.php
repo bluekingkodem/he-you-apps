@@ -39,11 +39,14 @@ Route::get('/user/list', [UserController::class, 'list'])->name('user.list')->mi
 Route::get('/user/delete/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('auth');
 
 //Country
+Route::get('/country/index', [CountryController::class, 'index'])->name('country.list');
+
 Route::get('/country/create', [CountryController::class, 'create'])->name('country.create');
 Route::post('/country/create', [CountryController::class, 'store'])->name('update');
 
 // Housings
 Route::get('/housing/index', [HousingController::class, 'index'])->name('housing.list')->middleware('auth');
+
 Route::get('/housing/show/{housing}', [HousingController::class, 'show'])->name('housing.show');
 
 Route::get('/housing/create', [HousingController::class, 'create'])->name('housing.create')->middleware('auth');

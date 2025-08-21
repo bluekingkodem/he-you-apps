@@ -8,7 +8,8 @@
                     <i class="fas fa-table me-1"></i>
                     Liste des logements
                 </div>
-                <a class="btn btn-primary w-25 mt-5 float ms-2" href="{{ route('housing.create') }}">Ajouter un logement <i class="fa-solid fa-house"></i></a>
+                <a class="btn btn-primary w-25 mt-5 float ms-2" href="{{ route('housing.create') }}">Ajouter un logement <i
+                        class="fa-solid fa-house"></i></a>
                 <div class="card-body">
                     {{ $housing->links() }}
                     <table id="datatablesSimple">

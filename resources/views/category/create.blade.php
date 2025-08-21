@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
-    <main>
-        <div class="container">
+    <div id="layoutSidenav_content">
+        <div class="container px-4">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
@@ -38,5 +38,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 @endsection
