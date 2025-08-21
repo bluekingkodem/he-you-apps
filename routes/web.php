@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HousingController;
 use App\Http\Controllers\RoleController;
@@ -50,15 +51,26 @@ Route::post('/country/edit/{country}', [CountryController::class, 'update'])->na
 Route::get('/country/destroy/{country}', [CountryController::class, 'destroy'])->name('country.destroy');
 
 //city
-Route::get('/city/index', [CountryController::class, 'index'])->name('city.list');
+Route::get('/city/index', [CityController::class, 'index'])->name('city.list');
 
-Route::get('/city/create', [CountryController::class, 'create'])->name('city.create');
-Route::post('/city/create', [CountryController::class, 'store'])->name('update');
+Route::get('/city/create', [CityController::class, 'create'])->name('city.create');
+Route::post('/city/create', [CityController::class, 'store'])->name('update');
 
-Route::get('/city/edit/{city}', [CountryController::class, 'edit'])->name('city.edit');
-Route::post('/city/edit/{city}', [CountryController::class, 'update'])->name('update');
+Route::get('/city/edit/{city}', [CityController::class, 'edit'])->name('city.edit');
+Route::post('/city/edit/{city}', [CityController::class, 'update'])->name('update');
 
-Route::get('/city/destroy/{city}', [CountryController::class, 'destroy'])->name('city.destroy');
+Route::get('/city/destroy/{city}', [CityController::class, 'destroy'])->name('city.destroy');
+
+//Address
+Route::get('/address/index', [CityController::class, 'index'])->name('address.list');
+
+Route::get('/address/create', [CityController::class, 'create'])->name('city.create');
+Route::post('/address/create', [CityController::class, 'store'])->name('update');
+
+Route::get('/address/edit/{address}', [CityController::class, 'edit'])->name('address.edit');
+Route::post('/address/address/{address}', [CityController::class, 'update'])->name('update');
+
+Route::get('/address/destroy/{address}', [CityController::class, 'destroy'])->name('address.destroy');
 
 // Housings
 Route::get('/housing/index', [HousingController::class, 'index'])->name('housing.list')->middleware('auth');
