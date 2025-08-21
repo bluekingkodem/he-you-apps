@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CityController;
@@ -62,15 +63,15 @@ Route::post('/city/edit/{city}', [CityController::class, 'update'])->name('updat
 Route::get('/city/destroy/{city}', [CityController::class, 'destroy'])->name('city.destroy');
 
 //Address
-Route::get('/address/index', [CityController::class, 'index'])->name('address.list');
+Route::get('/address/index', [AddressController::class, 'index'])->name('address.list');
 
-Route::get('/address/create', [CityController::class, 'create'])->name('city.create');
-Route::post('/address/create', [CityController::class, 'store'])->name('update');
+Route::get('/address/create', [AddressController::class, 'create'])->name('address.create');
+Route::post('/address/create', [AddressController::class, 'store'])->name('update');
 
-Route::get('/address/edit/{address}', [CityController::class, 'edit'])->name('address.edit');
-Route::post('/address/address/{address}', [CityController::class, 'update'])->name('update');
+Route::get('/address/edit/{address}', [AddressController::class, 'edit'])->name('address.edit');
+Route::post('/address/edit/{address}', [AddressController::class, 'update'])->name('update');
 
-Route::get('/address/destroy/{address}', [CityController::class, 'destroy'])->name('address.destroy');
+Route::get('/address/destroy/{address}', [AddressController::class, 'destroy'])->name('address.destroy');
 
 // Housings
 Route::get('/housing/index', [HousingController::class, 'index'])->name('housing.list')->middleware('auth');
